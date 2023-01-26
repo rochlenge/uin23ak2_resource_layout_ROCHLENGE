@@ -1,3 +1,28 @@
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    const tabId = tabName.replace("Tab", "");
+    const resource = resources[tabId - 1];
+  
+    document.getElementById(tabName).innerHTML = `
+    <h2>${resource.category}</h2>
+    <p>${resource.text}</p>
+    <ul>${resource.sources.map(source => `<li><a href="${source.url}">${source.title}</a></li>`)}</ul>`;
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+    
+  }
+
 const resources = [
     {
         category: "HTML",
