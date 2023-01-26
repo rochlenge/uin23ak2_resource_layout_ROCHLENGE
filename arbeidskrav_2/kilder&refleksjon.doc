@@ -1,3 +1,5 @@
+Kilder:
+
 https://www.w3schools.com/howto/howto_js_tabs.asp
 
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs
@@ -6,3 +8,10 @@ https://lms.webtricks.blog/kurs/innforing-i-programmering/arrayer-og-objekter/ma
 
 https://www.w3schools.com/js/js_string_templates.asp
 
+
+
+Refleksjon:
+
+Synes kanskje det er unødvendig mye kode i html-dokumentet.
+
+Vanskelig å få den aktive tab-en til å endre bakgrunnsfarge til blå.

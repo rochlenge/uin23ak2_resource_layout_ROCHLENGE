@@ -1,26 +1,32 @@
 function openTab(evt, tabName) {
+    //her deklareres alle variabler
     var i, tabcontent, tablinks;
 
+    //alle elementer med klassen "tabcontent" må skjules
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
     }
-
+    
+    //hent elementer med klassen "tablinks" og fjern klassen "active"
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-  
+
+    //skjønner ikke hvordan jeg skal få denne koden til å vise category-navnet i html.
+    //den henter informasjonen til de forskjellige tab-ene 
     const tabId = tabName.replace("Tab", "");
     const resource = resources[tabId - 1];
   
+    //linjer med template literals for å hente informasjonen som står i resources med tilhørende kategori
     document.getElementById(tabName).innerHTML = `
     <h2>${resource.category}</h2>
     <p>${resource.text}</p>
     <ul>${resource.sources.map(source => `<li><a href="${source.url}">${source.title}</a></li>`)}</ul>`;
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-    
+
   }
 
 const resources = [
